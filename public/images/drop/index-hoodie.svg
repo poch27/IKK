@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <rect width="1200" height="1500" fill="#0E0E0C"/>
+  <g transform="translate(600 750) scale(0.756) translate(0 -222)">
+    <path fill="#F2EFE8" d="M-112 8H112L252 44L502 477L540 543L448 596L400 536L252 364V624H-252V364L-400 536L-448 596L-540 543L-502 477L-252 44Z"/>
+    <path fill="#F2EFE8" d="M-246 624H246L242 700H-242Z"/>
+    <path fill="#F2EFE8" d="M-112 8C-172 -60 -170 -236 0 -256C170 -236 172 -60 112 8C96 50 50 64 0 64C-50 64 -96 50 -112 8Z"/>
+    <path fill="#DAD5CB" d="M0 22C-92 -4 -116 -166 0 -214C116 -166 92 -4 0 22Z"/>
+    <g fill="none" stroke="#E2DED5" stroke-width="4" stroke-linecap="round">
+      <path d="M-225 634V692M-200 634V692M-175 634V692M-150 634V692M-125 634V692M-100 634V692M-75 634V692M-50 634V692M-25 634V692M0 634V692M25 634V692M50 634V692M75 634V692M100 634V692M125 634V692M150 634V692M175 634V692M200 634V692M225 634V692"/>
+      <path d="M-481.6 488.8L-521.6 553.6M-461.2 500.6L-503.2 564.2M-440.8 512.4L-484.8 574.8M-420.4 524.2L-466.4 585.4"/>
+      <path d="M481.6 488.8L521.6 553.6M461.2 500.6L503.2 564.2M440.8 512.4L484.8 574.8M420.4 524.2L466.4 585.4"/>
+    </g>
+    <g fill="none" stroke="#CFCBC2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 22C-92 -4 -116 -166 0 -214C116 -166 92 -4 0 22Z"/>
+      <path d="M0 46C-118 14 -142 -190 0 -238C142 -190 118 14 0 46V64"/>
+      <path d="M-112 8C-96 50 -50 64 0 64C50 64 96 50 112 8"/>
+      <path d="M-252 44C-246 160 -246 260 -252 364M252 44C246 160 246 260 252 364"/>
+      <path d="M-502 477L-400 536M502 477L400 536"/>
+      <path d="M-246 624H246"/>
+      <path d="M-148 410H148L206 530V596H-206V530Z"/>
+      <path d="M-141 422H141M135 410L195 536M-135 410L-195 536"/>
+    </g>
+    <g fill="none" stroke-linecap="round">
+      <path stroke="#CFCBC2" stroke-width="11" d="M-48 5L-54 200M48 5L54 200"/>
+      <path stroke="#F2EFE8" stroke-width="5" d="M-48 5L-54 200M48 5L54 200"/>
+      <path stroke="#BDB8AE" stroke-width="11" d="M-54 202L-55 228M54 202L55 228"/>
+    </g>
+    <g fill="#DAD5CB" stroke="#CFCBC2" stroke-width="4">
+      <circle cx="-48" cy="5" r="8"/>
+      <circle cx="48" cy="5" r="8"/>
+    </g>
+  </g>
+</svg>

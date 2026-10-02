@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/
+
+# Local environment and secret material
+.env*
+!.env.example
+.envrc
+*.pem
+*.key
+*.p12
+*.pfx
+.secrets/
+secrets/

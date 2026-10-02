@@ -1,0 +1,227 @@
+/*
+ * Waitlist form on the dark signup section. Square corners, hairline light
+ * borders, accent submit. DOM order (email, consent, privacy, submit,
+ * feedback) is kept on every breakpoint so focus order matches reading order.
+ * Colors come from lib/brand.ts (injected as --c-* on <html>).
+ */
+
+.form {
+  --wf-ink: var(--c-dark);
+  --wf-bone: var(--c-light);
+  --wf-muted: var(--c-muted-on-dark);
+  --wf-signal: var(--c-accent);
+  --wf-on-signal: var(--c-on-accent);
+  --wf-error: var(--c-error);
+  --wf-error-text: var(--c-error-on-dark);
+  --focus-color: var(--c-accent);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 40rem;
+  font-family: var(--font-display), Arial, sans-serif;
+  color: var(--wf-bone);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-label), ui-monospace, Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wf-bone);
+}
+
+.input {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--wf-bone);
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--wf-bone);
+  font: inherit;
+  /* At least 16px so mobile browsers do not zoom on focus. */
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.input:hover {
+  border-color: var(--wf-signal);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--wf-error-text);
+  box-shadow: inset 0 0 0 1px var(--wf-error-text);
+}
+
+.checkbox[aria-invalid="true"] {
+  outline: 2px solid var(--wf-error-text);
+  outline-offset: 1px;
+}
+
+.consentRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.checkboxHit {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline-start: -0.75rem;
+}
+
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  border-radius: 0;
+  accent-color: var(--wf-signal);
+  cursor: pointer;
+}
+
+.consentText {
+  padding-block: calc((2.75rem - 1lh) / 2);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.fieldError {
+  margin: 0;
+  color: var(--wf-error-text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.privacy {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--wf-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.link,
+.link:hover {
+  color: var(--wf-bone);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Off-screen rather than display:none so naive bots still fill it in. */
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.submit {
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--wf-signal);
+  border-radius: 0;
+  background-color: var(--wf-signal);
+  color: var(--wf-on-signal);
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-variation-settings: "wdth" 70;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+  border-color: var(--wf-bone);
+  background-color: var(--wf-bone);
+  color: var(--wf-ink);
+}
+
+.submit:disabled,
+.submit[aria-disabled="true"] {
+  border-color: var(--wf-muted);
+  background-color: var(--wf-muted);
+  color: var(--wf-ink);
+  cursor: progress;
+}
+
+@media (min-width: 48rem) {
+  .submit {
+    width: auto;
+    align-self: flex-start;
+    min-width: 20rem;
+  }
+}
+
+.feedbackGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Empty live regions collapse to nothing but stay in the accessibility tree. */
+.feedback {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.feedback:empty {
+  display: block;
+  padding: 0;
+  border: 0;
+}
+
+.pending {
+  font-family: var(--font-label), ui-monospace, Consolas, monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wf-muted);
+}
+
+.success,
+.error {
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--wf-signal);
+  background-color: var(--wf-bone);
+  color: var(--wf-ink);
+  font-weight: 600;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-left-color: var(--wf-error);
+}
+
+.retryNote {
+  font-size: 1rem;
+  font-weight: 400;
+}
