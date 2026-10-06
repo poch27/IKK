@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { brand } from "@/lib/brand";
@@ -8,13 +9,17 @@ import styles from "./page.module.css";
 export default function NotFound() {
   return (
     <div className={styles["page"]}>
-      <p className={styles["strip"]}>{brand.strip}</p>
-
       <header className={styles["header"]}>
-        <p className={styles["wordmark"]}>
-          <span className={styles["wordmarkLight"]}>{brand.wordmark.light}</span>
-          <span className={styles["wordmarkHeavy"]}>{brand.wordmark.heavy}</span>
-        </p>
+        <Link className={styles["logoLink"]} href="/" aria-label={`${brand.name} home`}>
+          <Image
+            className={styles["logoImage"]}
+            src={brand.hero.image.src}
+            width={1280}
+            height={1280}
+            alt={brand.hero.image.alt}
+            priority
+          />
+        </Link>
       </header>
 
       <main id="main-content" className={`${styles["main"]} ${styles["notFound"]}`}>

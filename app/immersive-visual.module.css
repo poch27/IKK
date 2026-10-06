@@ -1,0 +1,127 @@
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 32rem;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 45%, rgb(0 92 53 / 24%), transparent 40%),
+    #0b0d0c;
+  cursor: crosshair;
+}
+
+.fallback {
+  position: absolute;
+  z-index: -1;
+  inset: 14%;
+  filter: grayscale(1) contrast(1.15);
+}
+
+.fallback img {
+  object-fit: contain;
+}
+
+.canvas {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  touch-action: pan-y;
+}
+
+.canvas canvas {
+  display: block;
+  touch-action: pan-y;
+}
+
+.frame {
+  position: absolute;
+  z-index: 2;
+  inset: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem;
+  border: 1px solid rgb(245 243 238 / 18%);
+  color: rgb(245 243 238 / 62%);
+  font-family: var(--font-label), ui-monospace, Consolas, monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.frame::before,
+.frame::after {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-color: #005c35;
+  content: "";
+}
+
+.frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 3px solid #005c35;
+  border-left: 3px solid #005c35;
+}
+
+.frame::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 3px solid #005c35;
+  border-bottom: 3px solid #005c35;
+}
+
+.reticle {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px solid rgb(245 243 238 / 12%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.reticle::before,
+.reticle::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgb(245 243 238 / 16%);
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.reticle::before {
+  width: 7rem;
+  height: 1px;
+}
+
+.reticle::after {
+  width: 1px;
+  height: 7rem;
+}
+
+@media (min-width: 48rem) {
+  .stage {
+    min-height: 40rem;
+  }
+
+  .frame {
+    inset: 1.5rem;
+    padding: 0.85rem;
+    font-size: 0.6875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    cursor: default;
+  }
+}
